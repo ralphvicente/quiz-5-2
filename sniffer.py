@@ -31,8 +31,8 @@ def send_pkt(number, interval):
     """Send a custom packet"""
     #TODO
 
-    ipLayer = IP(src='192.168.10.4', dst='192.168.6.12', ttl=32)
-    icmpLayer = ICMP(type='echo-request')
+    ipLayer : IP = IP(src='192.168.10.4', dst='192.168.6.12', ttl=32)
+    icmpLayer : ICMP = ICMP(type='echo-request')
     payload : str = "CSCE 313 secret message"
 
     pkt = ipLayer/icmpLayer/payload
@@ -45,7 +45,7 @@ def send_pkt(number, interval):
 def print_pkt(pkt):
     """ Print Source IP, Destination IP, Protocol, TTL"""
     # TODO
-    print("SNIFFED")
+    print()
     print("Source IP: ", pkt.src)
     print("Destination IP: ", pkt.dst)
     print("Protocol: ", pkt.proto)
