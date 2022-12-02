@@ -12,7 +12,7 @@ def main():
             send_pkt(number, interval)
         elif option == '2':
             print("Listening to all traffic and show all ...")
-            sniff(iface='eth1', prn= lambda x: x.show())
+            sniff(iface='eth1', prn= lambda x: print_pkt(x))
         elif option == '3':
             print("Listening to ping command to the address 8.8.4.4 ...")
             sniff(filter='icmp and dst 8.8.4.4' ,prn= lambda x: print_pkt(x))
@@ -23,7 +23,7 @@ def main():
             print("End")
             break
         else:
-            print("\nInvalid entry")
+            print(f"\nInvalid entry\n")
 
 
 
@@ -33,7 +33,7 @@ def send_pkt(number, interval):
 
     ipLayer = IP(src='192.168.10.4', dst='192.168.6.12', ttl=32)
     icmpLayer = ICMP(type='echo-request')
-    payload = "CSCE 313 secret message"
+    payload : str = "CSCE 313 secret message"
 
     pkt = ipLayer/icmpLayer/payload
 
@@ -42,13 +42,11 @@ def send_pkt(number, interval):
     send(pkt, inter=interval, count=number)
 
 
-"""
-@brief      Prints out packet information
-@param      pkt: Packet                     packet to be printed
-"""
 def print_pkt(pkt):
+    """ Print Source IP, Destination IP, Protocol, TTL"""
     # TODO
-    pass
+    print("Source IP: {pkt.src}, Destination IP: {pkt.dst}, Protocol: {pkt.proto}, TTL: {pkt.ttl}")
+    
 
 
 def print_menu():
