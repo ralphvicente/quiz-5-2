@@ -6,8 +6,8 @@ def main():
         print_menu()
         option : str = input('Choose a menu option: ')
         if option == '1':
-            number  = input("Number of packets to be sent: ")
-            interval = input("Number of seconds between each packet: ")
+            number = int(input("Number of packets to be sent: "))
+            interval = int(input("Number of seconds between each packet: "))
             print("Creating and sending packets ...")
             send_pkt(number, interval)
         elif option == '2':
