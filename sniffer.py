@@ -33,7 +33,7 @@ def send_pkt(number, interval):
 
     ipLayer = IP(src='192.168.10.4', dst='192.168.6.12', ttl=32)
     icmpLayer = ICMP(type='echo-request')
-    payload : str = "CSCE 313 secret message"
+    payload = "CSCE 313 secret message"
 
     pkt = ipLayer/icmpLayer/payload
 
