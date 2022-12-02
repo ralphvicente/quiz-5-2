@@ -1,4 +1,4 @@
-from scapy.all import Packet, Ether, IP, ICMP, Raw, sniff, send
+from scapy.all import Packet, Ether, IP, ICMP, Raw, sniff, sendp
 
 def main():
     """Driver function"""
@@ -39,7 +39,7 @@ def send_pkt(number : int, interval : int):
 
     pkt.show()
 
-    send(pkt, inter=interval, count=number)
+    sendp(pkt, inter=interval, count=number)
 
 
 def print_pkt(pkt):
