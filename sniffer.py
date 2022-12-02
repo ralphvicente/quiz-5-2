@@ -35,7 +35,7 @@ def send_pkt(number, interval):
     #icmpLayer : ICMP = ICMP(type='echo-request')
     payload : str = "CSCE 313 secret message"
 
-    pkt = IP(src='192.168.10.4', dst='192.168.6.12', ttl=32) / ICMP(type='echo-request') / payload
+    pkt = IP(src='192.168.10.4', dst='192.168.6.12', ttl=32) / ICMP(type='echo-request') / Raw(data = payload)
 
     pkt.show()
 
