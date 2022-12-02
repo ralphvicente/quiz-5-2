@@ -46,7 +46,10 @@ def print_pkt(pkt):
     """ Print Source IP, Destination IP, Protocol, TTL"""
     # TODO
     print("SNIFFED")
-    print("Source IP: {pkt.src}, Destination IP: {pkt.dst}, Protocol: {pkt.proto}, TTL: {pkt.ttl}")
+    print("Source IP: ", pkt.src)
+    print("Destination IP: ", pkt.dst)
+    print("Protocol: ", pkt.proto)
+    print("TTL: ", pkt.ttl)
     
 
 
