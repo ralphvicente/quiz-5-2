@@ -35,7 +35,7 @@ def send_pkt(number, interval):
     icmpLayer : ICMP = ICMP(type='echo-request')
     payload : str = "CSCE 313 secret message"
 
-    pkt = ipLayer/icmpLayer/payload
+    pkt : Packet = ipLayer/icmpLayer/payload
 
     pkt.show()
 
