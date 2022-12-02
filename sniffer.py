@@ -31,11 +31,11 @@ def send_pkt(number, interval):
     """Send a custom packet"""
     #TODO
 
-    ipLayer : IP = IP(src='192.168.10.4', dst='192.168.6.12', ttl=32)
-    icmpLayer : ICMP = ICMP(type='echo-request')
+    #ipLayer : IP = IP(src='192.168.10.4', dst='192.168.6.12', ttl=32)
+    #icmpLayer : ICMP = ICMP(type='echo-request')
     payload : str = "CSCE 313 secret message"
 
-    pkt : Packet = ipLayer/icmpLayer/payload
+    pkt = IP(src='192.168.10.4', dst='192.168.6.12', ttl=32) / ICMP(type='echo-request') / payload
 
     pkt.show()
 
