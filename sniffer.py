@@ -12,7 +12,7 @@ def main():
             send_pkt(number, interval)
         elif option == '2':
             print("Listening to all traffic and show all ...")
-            sniff(iface='eth1', prn= lambda x: print_pkt(x))
+            sniff(iface='ens4', prn= lambda x: x.show)
         elif option == '3':
             print("Listening to ping command to the address 8.8.4.4 ...")
             sniff(filter='icmp and dst 8.8.4.4' ,prn= lambda x: print_pkt(x))
@@ -45,6 +45,7 @@ def send_pkt(number, interval):
 def print_pkt(pkt):
     """ Print Source IP, Destination IP, Protocol, TTL"""
     # TODO
+    print("SNIFFED")
     print("Source IP: {pkt.src}, Destination IP: {pkt.dst}, Protocol: {pkt.proto}, TTL: {pkt.ttl}")
     
 
