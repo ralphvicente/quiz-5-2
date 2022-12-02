@@ -27,7 +27,7 @@ def main():
 
 
 
-def send_pkt(number, interval):
+def send_pkt(number : int, interval : int):
     """Send a custom packet"""
     #TODO
 
